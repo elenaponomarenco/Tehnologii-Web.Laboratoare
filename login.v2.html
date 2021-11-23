@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+    <title>Login</title>   
+    <link href = "css\login.v2.css" rel = "stylesheet" type = "text/css" >   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+</head>  
+<body>
+  <div>
+    <form name="login" action="php/login.php" method="post">
+        <h1>Login</h1> 
+        <p>
+          <!-- <label for="username">Name</label> -->
+          <input id="username" name="username" minlength="5" type="text" placeholder=" Username" required>
+        </p>
+        <p>
+          <!-- <label for="password">Password </label> -->
+          <input id="password" type="password" name="password" placeholder=" Password" required>
+        </p>
+        <p>
+          <input class="submit" type="submit" value="Submit" >
+        </p>
+    </form>
+  </div>
+<script>
+    $(document).ready(function() {
+  $("form[name='login']").validate({
+    rules: {
+          username: {
+              required: true,
+              minlength: 7
+          },
+          password: {
+              required: true,
+              minlength: 7
+          },
+    },
+    messages: {
+        username: {
+            required: "Please enter your name!",
+            minlength: "At least 7 characters!"
+        },
+        password: {
+            required: "Please enter your password!",
+            minlength: "At least 7 characters!"
+        },
+        
+    },
+    // submitHandler: function() { alert("Submitted!") },
+    submitHandler: function(form) {
+        form.submit();
+    }
+  });
+});
+</script>
+    <a href="index.html">&#171;  &#206;napoi la pagina principal&#259;</a>
+</body>     
+</html>  

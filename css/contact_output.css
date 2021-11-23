@@ -1,0 +1,30 @@
+body, html{   
+    background: radial-gradient(rgb(57, 169, 255), rgb(205, 239, 255)); 
+    display: grid;
+}  
+form {
+    box-shadow:  0 0  35px  #ffffff; 
+    border: solid #daf0fa 5px;  
+    width:21%;  
+    border-radius: 45px;
+    margin: 210px auto 180px; 
+    background: #9ee0ff;  
+    padding: 40px; 
+    font-size: 20px;
+}
+
+h1 {
+    font-family: Lucida Bright;
+    position: absolute;
+    top: 8%;
+    left: 29%;
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E8A317; 
+}

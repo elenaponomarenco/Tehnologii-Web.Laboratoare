@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact us</title>
+    <link href = "css\contact.v2.css" rel = "stylesheet" type = "text/css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+</head>
+<body>
+    <div>
+        <form name="contact" action="php\contact.php" method="POST" >
+        <h1>Contact us</h1>
+        <p>
+            <input type="text" placeholder=" Username" name="username">
+        </p>
+        <p>
+            <input type="email" placeholder=" Email" name="email">
+        </p>     
+        <p>
+            <input type="text" placeholder=" Phone " name="phone">
+        </p>
+        <p>
+            <textarea name="message" rows="6" placeholder=" Enter your message here..."></textarea>
+        </p>
+        <p>
+            <input type="submit" value=" Send " class="submit">
+        </p>        
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+        $("form[name='contact']").validate({
+        rules: {
+            username: {
+                required: true,
+                minlength: 7
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            phone: {
+                required: true
+            },
+            message: {
+                required: true
+            },
+        },
+        messages: {
+            username: {
+                required: "Please enter your name!",
+                minlength: "At least 7 characters!"
+            },
+            email: {
+                required: "Please enter your email!"
+            },
+            phone: {
+                required: "Please enter your phone number!"
+            },
+            message: {
+                required: "Please enter your message!"
+            }
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+      });
+    });
+    </script>
+    <a href="index.html">&#171;  &#206;napoi la pagina principal&#259;</a>
+</body>
+</html>

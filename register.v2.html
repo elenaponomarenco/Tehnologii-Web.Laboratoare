@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel = "stylesheet" type = "text/css" href = "css\register.v2.css">   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+</head>
+<body>
+    <div>
+        <form name="register" action="php\register_insert.php" method="post" id="frame">
+            <h1>Create a New Account</h1> 
+            <p>
+                <input id="username" name="username" minlength="7" type="text" placeholder=" Username" required>
+            </p>
+            <p>
+                <input id="password" type="password" minlength="7" name="password" placeholder=" Password " required>
+            </p>
+            <p>
+                <input type="mail" placeholder=" Email" name="email" required>
+            </p> <br>
+            <p>
+                <!-- <label for="phone">Phone Nr.:</label> -->
+                <select name="phoneCode">
+                    <option selected hidden value="">Phone Code</option>
+                    <option value="+373">+373</option>
+                    <option value="+380">+380</option>
+                    <option value="+375">+375</option>
+                    <option value="+359">+359</option>
+                    <option value="+40"> +40 </option>
+                    <option value="+370">+370</option>
+                    <option value="+39"> +39 </option>
+                </select>
+                <input type="phone" placeholder="     69&#8727;&#8727;&#8727;&#8727;&#8727;&#8727;" name="phone" required>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function() {
+        $("form[name='register']").validate({
+            // submitHandler: function() { alert("Submitted!") },
+        rules: {
+            username: {
+                required: true,
+                minlength: 7
+            },
+            password: {
+                required: true,
+                minlength: 7
+                //ce trebuie sa contina passwordul
+            },
+            gender: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            phone: {
+                required: true
+            },
+        },
+        messages: {
+            username: {
+                required: "Please enter your name!",
+                minlength: "At least 7 characters!"
+            },
+            password: {
+                required: "Please enter your password!",
+                minlength: "At least 7 characters!"
+            },
+            gender: {
+                required: "Please enter your gender!"
+            },
+            email: {
+            required: "Please enter your email!"
+            //filter for email
+            },
+            phone: {
+                required: "Please enter your phone number!"
+            },
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
+      });
+    });
+    </script>
+    <a href="index.html" >&#171;  &#206;napoi la pagina principal&#259;</a>
+</body>
+</html>
