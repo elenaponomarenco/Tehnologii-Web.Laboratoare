@@ -1,0 +1,187 @@
+body {
+	background: linear-gradient(0deg, rgba(69,173,255,1) 0%, rgba(102,188,255,1) 30%, rgba(195,229,255,1) 66%, rgba(210,243,255,1) 100%)fixed;
+	background-repeat: no-repeat;
+}
+
+h1 {
+	font-family: Garamond;
+	font-size: 60px;
+	color: darkblue;
+	text-align: center;
+}
+
+.topmenu {
+	overflow: hidden;
+	font-family: Georgia;
+	font-size: 20px;
+	color: rgb(7, 7, 211);
+  }
+  
+.topmenu a {
+	float: right;
+	border: 3px solid rgb(241, 249, 255);
+	box-shadow: 0 0 5px white,
+				0 0 3px white inset; 
+	background-color: rgb(208, 240, 255);
+	border-radius: 7px;
+	text-align: center;
+	margin: 9px;
+	padding: 10px 14px;
+	text-decoration: none;
+	font-size: 17px;
+}
+  
+.topmenu a:hover {
+	background-color: rgb(251, 254, 255);
+	border: 3px solid rgb(255, 255, 255);
+	border-radius: 7px;
+	color: darkblue;
+}
+  
+.topmenu a.active {
+	background-color: darkblue;
+	color: white;
+}  
+
+/* rounded border for link */
+#roundBorder {
+  border-radius: 35px;
+  border: 6px solid #bee3ff;
+  padding: 0px; 
+  width: 1400px;
+  height: 50px;
+  font-size: 45px;
+}
+
+/* hidden border for text */
+#hiddenBorder {
+ 	border-style: hidden;
+  	height: 300px;
+ 	width: 1400px;	
+ 	margin: 15px;
+ 	padding-top: 0px;
+ 	padding-left: 30px;
+ 	display: inline-block;
+ 	border-width: 0;
+	font-size: 25px;
+	font-family: Century;
+ }
+
+/* hidden border for list */
+#hiddenBorderList {
+ 	border-style: hidden;
+  	height: 300px;
+ 	width: 600px;
+ 	margin: 15px;
+ 	padding-top: 0px;
+ 	padding-left: 15px;
+ 	display: inline-block;
+ 	border-width: 5px;
+ }
+
+#imgANDheader {
+	float: left;
+}
+
+div {
+	text-align: center;
+}
+
+ul{
+	text-align: left;
+}
+
+a:link {
+	text-decoration: none;
+	font-size: 20px;
+  }
+
+/* mouse over link for years */
+a:hover {
+	color: #E8A317;
+  }
+
+/* visited link */
+a:visited {
+	text-decoration: none;
+  }
+
+#styleButton {
+	background: rgb(76,176,255);
+	background: linear-gradient(0deg, rgba(76,176,255,1) 0%, rgba(90,183,255,1) 100%);
+	color: rgb(58, 39, 185);
+	border: none;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 50px;
+	font-family: Century;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+/* A modal is a dialog box/popup window that is displayed on top of the current page */
+.modal {
+	position: fixed; /* cand dam scroll in jos sau sus, fereastra deschisa va urma mereu */
+	top: 50%;  /* va fixa coltul ferestrei in centrul paginii*/
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0); /* fixeaza perfect in centrul paginii*/
+	transition: 200ms ease-in-out; /* timpul de deschidere si inchidere a ferestrei*/
+	border: 6px solid #acdaff;
+	border-radius: 6%; 
+	z-index: 10;
+	background-color: #7cbef1;
+	width: 600px;
+	max-width: 80%;
+}
+
+.modal.active {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+	padding: 10px 15px;
+	display: flex; /* items will line up side-by-side*/
+	justify-content: space-between; /* to space items out  */ 
+	align-items: center;
+	border-bottom: 4px solid #acdaff;
+}
+
+.modal-header .title{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.modal-header .close-button{
+	cursor: pointer; /* posibilitatea de a da click pe ea*/
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+.modal-body {
+	padding: 10px 15px;
+	margin-left: 25px;
+	font-size: 20px;
+	font-family: Century;
+}
+
+#overlay {
+	position: fixed;
+	opacity: 0;
+	transition: 200ms ease-in-out;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, .5);
+	pointer-events: none;
+  }
+  
+  #overlay.active {
+	opacity: 1;
+	pointer-events: all;
+  }
